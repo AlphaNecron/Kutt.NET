@@ -19,8 +19,7 @@ An API wrapper for [Kutt](kutt.it), written in C#.
 ```csharp
 // Initializes a Kutt instance with default server
 KuttApi kutt = new KuttApi("your_api_key");
-// Or with your own server
-KuttApi kutt = new Kutt("your_api_key", "example.com");
+
 // Creates a shortened URL
 Link link = await CreateLinkAsync("https://github.com");
 Console.WriteLine($"Shortened URL: {link.ShortUrl}");
