@@ -13,6 +13,7 @@
         <PackageTags>kutt url-shortener netstandard library</PackageTags>
         <AssemblyVersion>1.0.0</AssemblyVersion>
         <FileVersion>1.0.0</FileVersion>
+        <PackageLicenseUrl>https://raw.githubusercontent.com/AlphaNecron/Kutt.NET/master/LICENSE</PackageLicenseUrl>
     </PropertyGroup>
 
     <ItemGroup>
