@@ -1,11 +1,13 @@
 
-![Logo](https://user-images.githubusercontent.com/57827456/122667487-4923e980-d1dd-11eb-9c78-c9b25ab43149.png)
+[![Logo](https://user-images.githubusercontent.com/57827456/122667487-4923e980-d1dd-11eb-9c78-c9b25ab43149.png)](#)
 
     
 # Kutt.NET
 
 An API wrapper for [Kutt](kutt.it), written in C#.
 
+[![GitHub](https://img.shields.io/github/downloads/AlphaNecron/Kutt.NET/total?color=%237289DA&logo=github&style=for-the-badge)](#)
+[![NuGet](https://img.shields.io/nuget/dt/Kutt.NET?color=%237289DA&logo=nuget&style=for-the-badge)](#)
 
 ## Authors
 
