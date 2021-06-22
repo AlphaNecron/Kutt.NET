@@ -8,25 +8,25 @@ namespace Kutt.NET.Links
     public class ListOfLinks
     {
         /// <summary>
-        /// The limit
+        /// Query limit
         /// </summary>
         [JsonProperty("limit")]
         public int Limit { get; private set; }
         
         /// <summary>
-        /// Skips
+        /// Amount of queries to skip
         /// </summary>
         [JsonProperty("skip")]
         public int Skip { get; private set; }
         
         /// <summary>
-        /// Total Amount
+        /// Total queries
         /// </summary>
         [JsonProperty("total")]
         public int Total { get; private set; }
         
         /// <summary>
-        /// Datas which content in Link.cs
+        /// Links
         /// </summary>
         [JsonProperty("data")]
         public Link[] Links { get; private set; }
