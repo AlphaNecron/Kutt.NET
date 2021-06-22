@@ -4,78 +4,84 @@ using Newtonsoft.Json;
 namespace Kutt.NET.Links.LinkStats
 {
     /// <summary>
-    /// Json Properties for LinkStats.cs
+    ///     Json Properties for LinkStats.cs
     /// </summary>
     public class LinkStats
     {
         /// <summary>
-        /// All Time
+        ///     All time stats
         /// </summary>
         [JsonProperty("allTime")]
         public StatsItem AllTime { get; private set; }
-        
+
         /// <summary>
-        /// Last Day
+        ///     Last day's stats
         /// </summary>
         [JsonProperty("lastDay")]
         public StatsItem LastDay { get; private set; }
-        
+
         /// <summary>
-        /// Last Week
+        ///     Last week's stats
         /// </summary>
         [JsonProperty("lastWeek")]
         public StatsItem LastWeek { get; private set; }
-        
+
         /// <summary>
-        /// Last Month
+        ///     Last month's stats
         /// </summary>
         [JsonProperty("lastMonth")]
         public StatsItem LastMonth { get; private set; }
-        
+
         /// <summary>
-        /// Updated At
+        ///     Update date
         /// </summary>
         [JsonProperty("updatedAt")]
         public DateTime UpdatedAt { get; private set; }
-        
+
         /// <summary>
-        /// Address
+        ///     Link's slug, eg: abc123
         /// </summary>
         [JsonProperty("address")]
         public string Address { get; private set; }
-        
+
         /// <summary>
-        /// Domain Banned
+        ///     Link's status
         /// </summary>
         [JsonProperty("banned")]
         public bool IsBanned { get; private set; }
-        
+
         /// <summary>
-        /// CreatedAt
+        ///     Link's creation date
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime CreatedAt { get; private set; }
-        
+
         /// <summary>
-        /// ID
+        ///     Link's unique ID
         /// </summary>
         [JsonProperty("id")]
         public string Uuid { get; private set; }
-        
+
         /// <summary>
-        /// Password
+        ///     Has password
         /// </summary>
         [JsonProperty("password")]
         public bool HasPassword { get; private set; }
-        
+
         /// <summary>
-        /// Target
+        ///     Shortened link
+        /// </summary>
+        [JsonProperty("link")]
+        public string Link { get; private set; }
+
+        /// <summary>
+        ///     Original link (long)
         /// </summary>
         [JsonProperty("target")]
         public string Target { get; private set; }
-        
+
         /// <summary>
-        /// Visit Counts
+        ///     Visit Counts
         /// </summary>
         [JsonProperty("visit_count")]
         public int Clicks { get; private set; }

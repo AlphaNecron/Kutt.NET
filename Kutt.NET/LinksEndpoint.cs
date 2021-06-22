@@ -10,17 +10,19 @@ using static Kutt.NET.Constants;
 namespace Kutt.NET
 {
     /// <summary>
-    /// Link Endpoint Class
+    ///     Link Endpoint Class
     /// </summary>
     public partial class KuttApi
     {
         /// <summary>
-        /// Get list of Link
+        ///     Get list of Link
         /// </summary>
-        /// <param name="limit">The Limit Amount</param>
-        /// <param name="skip">The Skip Amount</param>
-        /// <param name="all">Total Amount</param>
-        /// <returns><see cref="ListOfLinks"/></returns>
+        /// <param name="limit">Query limit</param>
+        /// <param name="skip">Amount of links to skip</param>
+        /// <param name="all">Get all links</param>
+        /// <returns>
+        ///     <see cref="ListOfLinks" />
+        /// </returns>
         public async Task<ListOfLinks> GetListOfLinksAsync(
             int limit = 10,
             int skip = 0,
@@ -39,7 +41,7 @@ namespace Kutt.NET
         }
 
         /// <summary>
-        /// Delete Link
+        ///     Delete a link
         /// </summary>
         /// <param name="uuid">UUID</param>
         public async Task DeleteLinkAsync(string uuid)
@@ -53,13 +55,13 @@ namespace Kutt.NET
         }
 
         /// <summary>
-        /// Update a link
+        ///     Update a link
         /// </summary>
         /// <param name="uuid">UUID</param>
         /// <param name="target">Target</param>
         /// <param name="slug">Slug</param>
         /// <param name="description">The Description</param>
-        /// <returns>Updated link as <see cref="Link"/></returns>
+        /// <returns>Updated link as <see cref="Link" /></returns>
         public async Task<Link> UpdateLinkAsync(
             string uuid,
             string target,
@@ -85,10 +87,12 @@ namespace Kutt.NET
         }
 
         /// <summary>
-        /// Get link stats
+        ///     Get link stats
         /// </summary>
         /// <param name="uuid">Link unique ID</param>
-        /// <returns><see cref="LinkStats"/></returns>
+        /// <returns>
+        ///     <see cref="LinkStats" />
+        /// </returns>
         public async Task<LinkStats> GetLinkStatsAsync(string uuid)
         {
             var request = new RestRequest(LINK_STATS_ENDPOINT, Method.PATCH, DataFormat.Json);
@@ -102,7 +106,7 @@ namespace Kutt.NET
         }
 
         /// <summary>
-        /// Create Link
+        ///     Create Link
         /// </summary>
         /// <param name="longUrl">Long URL</param>
         /// <param name="domain">Domain</param>
@@ -110,7 +114,7 @@ namespace Kutt.NET
         /// <param name="slug">Slug</param>
         /// <param name="reuse">Reuse</param>
         /// <param name="password">Password</param>
-        /// <returns>Shortened link as <see cref="Link"/></returns>
+        /// <returns>Shortened link as <see cref="Link" /></returns>
         public async Task<Link> CreateLinkAsync(
             string longUrl,
             string domain = "",

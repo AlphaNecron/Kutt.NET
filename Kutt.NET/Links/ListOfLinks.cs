@@ -3,30 +3,30 @@
 namespace Kutt.NET.Links
 {
     /// <summary>
-    /// Json Propeties for ListOfLinks
+    ///     Json Propeties for ListOfLinks
     /// </summary>
     public class ListOfLinks
     {
         /// <summary>
-        /// Query limit
+        ///     Query limit
         /// </summary>
         [JsonProperty("limit")]
         public int Limit { get; private set; }
-        
+
         /// <summary>
-        /// Amount of queries to skip
+        ///     Amount of links to skip
         /// </summary>
         [JsonProperty("skip")]
         public int Skip { get; private set; }
-        
+
         /// <summary>
-        /// Total queries
+        ///     Total link count
         /// </summary>
         [JsonProperty("total")]
         public int Total { get; private set; }
-        
+
         /// <summary>
-        /// Links
+        ///     List of links
         /// </summary>
         [JsonProperty("data")]
         public Link[] Links { get; private set; }

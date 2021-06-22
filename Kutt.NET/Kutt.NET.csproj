@@ -10,11 +10,11 @@
         <RepositoryUrl>https://github.com/AlphaNecron/Kutt.NET</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>kutt url-shortener netstandard library</PackageTags>
-        <AssemblyVersion>1.0.1</AssemblyVersion>
-        <FileVersion>1.0.1</FileVersion>
+        <AssemblyVersion>1.0.2</AssemblyVersion>
+        <FileVersion>1.0.2</FileVersion>
         <PackageIcon>kutt.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageVersion>1.0.1</PackageVersion>
+        <PackageVersion>1.0.2</PackageVersion>
     </PropertyGroup>
     <ItemGroup>
         <None Include="kutt.png" Pack="true" PackagePath="$(PackageIcon)"/>

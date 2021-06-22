@@ -8,12 +8,12 @@ using static Kutt.NET.Constants;
 namespace Kutt.NET
 {
     /// <summary>
-    /// Users Endpoint Class
+    ///     Users Endpoint Class
     /// </summary>
     public partial class KuttApi
     {
         /// <summary>
-        /// Get user info
+        ///     Get user info
         /// </summary>
         /// <returns>User info</returns>
         public async Task<UserInfo> GetUserInfoAsync()

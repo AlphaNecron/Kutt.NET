@@ -4,42 +4,42 @@ using Newtonsoft.Json;
 namespace Kutt.NET.Domains
 {
     /// <summary>
-    /// Json Properties for Domain
+    ///     Json Properties for Domain
     /// </summary>
     public class Domain
     {
         /// <summary>
-        /// Domain address
+        ///     Domain's address
         /// </summary>
         [JsonProperty("address")]
         public string Address { get; private set; }
-        
+
         /// <summary>
-        /// Domain status
+        ///     Domain's status
         /// </summary>
         [JsonProperty("banned")]
         public bool IsBanned { get; private set; }
-        
+
         /// <summary>
-        /// Domain unique ID
+        ///     Domain's unique ID
         /// </summary>
         [JsonProperty("id")]
         public string Uuid { get; private set; }
-        
+
         /// <summary>
-        /// Creation date
+        ///     Domain's creation date
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime CreatedAt { get; private set; }
-        
+
         /// <summary>
-        /// Domain homepage
+        ///     Domain's homepage
         /// </summary>
         [JsonProperty("homepage")]
         public string Homepage { get; private set; }
-        
+
         /// <summary>
-        /// Update date
+        ///     Domain's update date
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime UpdatedAt { get; private set; }
