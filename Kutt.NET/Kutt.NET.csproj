@@ -1,24 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
+        <TargetFramework>netstandard2.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Kutt.NET</Title>
         <Description>C# API Wrapper for Kutt.</Description>
         <Copyright>AlphaNecron</Copyright>
         <PackageProjectUrl>https://github.com/AlphaNecron/Kutt.NET</PackageProjectUrl>
-        <PackageIconUrl>kutt.png</PackageIconUrl>
         <RepositoryUrl>https://github.com/AlphaNecron/Kutt.NET</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>kutt url-shortener netstandard library</PackageTags>
-        <AssemblyVersion>1.0.0</AssemblyVersion>
-        <FileVersion>1.0.0</FileVersion>
-        <PackageLicenseUrl>https://raw.githubusercontent.com/AlphaNecron/Kutt.NET/master/LICENSE</PackageLicenseUrl>
+        <AssemblyVersion>1.0.1</AssemblyVersion>
+        <FileVersion>1.0.1</FileVersion>
+        <PackageIcon>kutt.png</PackageIcon>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageVersion>1.0.1</PackageVersion>
     </PropertyGroup>
-
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-      <PackageReference Include="RestSharp" Version="106.11.7" />
+        <None Include="kutt.png" Pack="true" PackagePath="$(PackageIcon)"/>
     </ItemGroup>
-
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="RestSharp" Version="106.11.7" />
+    </ItemGroup>
 </Project>
