@@ -9,16 +9,14 @@ using static Kutt.NET.Constants;
 
 namespace Kutt.NET
 {
-    /// <summary>
-    /// Domain EndPoints Class
-    /// </summary>
     public partial class KuttApi
     {
         /// <summary>
-        /// Create Domain
+        /// Add a new domain to your account
         /// </summary>
-        /// <param name="address">address</param>
-        /// <param name="homepage">homepage</param>
+        /// <param name="address">Domain address</param>
+        /// <param name="homepage">Domain homepage</param>
+        /// <returns>Created domain</returns>
         public async Task<Domain> CreateDomainAsync(string address, string homepage = "")
         {
             var body = new
@@ -37,9 +35,9 @@ namespace Kutt.NET
         }
 
         /// <summary>
-        /// Delete Domain
+        /// Remove a domain from your account
         /// </summary>
-        /// <param name ="uuid">uuid</param>
+        /// <param name="uuid">Domain unique ID</param>
         public async Task DeleteDomainAsync(string uuid)
         {
             var request = new RestRequest(DOMAINS_ENDPOINT_WITH_ID, Method.DELETE, DataFormat.Json);
