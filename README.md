@@ -6,8 +6,8 @@
 
 An API wrapper for [Kutt](kutt.it), written in C#.
 
-[![GitHub](https://img.shields.io/github/downloads/AlphaNecron/Kutt.NET/total?color=%237289DA&logo=github&style=for-the-badge)](#)
-[![NuGet](https://img.shields.io/nuget/dt/Kutt.NET?color=%237289DA&logo=nuget&style=for-the-badge)](#)
+[![GitHub](https://img.shields.io/github/downloads/AlphaNecron/Kutt.NET/total?color=%237289DA&logo=github&style=for-the-badge)](https://github.com/AlphaNecron/Kutt.NET/releases/latest)
+[![NuGet](https://img.shields.io/nuget/dt/Kutt.NET?color=%237289DA&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/Kutt.NET)
 
 ## Authors
 
