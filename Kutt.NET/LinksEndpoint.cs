@@ -9,8 +9,17 @@ using static Kutt.NET.Constants;
 
 namespace Kutt.NET
 {
+    /// <summary>
+    /// Link EndPoints Class
+    /// </summary>
     public partial class KuttApi
     {
+        /// <summary>
+        /// Get list of Link
+        /// </summary>
+        /// <param name="limit">The Limit Amount</param>
+        /// <param name="skip">The Skip Amount</param>
+        /// <param name="all">Total Amount</param>
         public async Task<ListOfLinks> GetListOfLinksAsync(
             int limit = 10,
             int skip = 0,
@@ -28,6 +37,10 @@ namespace Kutt.NET
             return JsonConvert.DeserializeObject<ListOfLinks>(content);
         }
 
+        /// <summary>
+        /// Delete Link
+        /// </summary>
+        /// <param name="uuid">UUID</param>
         public async Task DeleteLinkAsync(string uuid)
         {
             var request = new RestRequest(LINKS_ENDPOINT_WITH_ID, Method.DELETE, DataFormat.Json);
@@ -38,6 +51,13 @@ namespace Kutt.NET
                     ($"{(int) response.StatusCode}: {(JObject.Parse(response.Content)["error"] ?? "").Value<string>()}");
         }
 
+        /// <summary>
+        /// Update Link
+        /// </summary>
+        /// <param name="uuid">UUID</param>
+        /// <param name="target">Target</param>
+        /// <param name="slug">Slug</param>
+        /// <param name="description">The Description</param>
         public async Task<Link> UpdateLinkAsync(
             string uuid,
             string target,
@@ -62,6 +82,10 @@ namespace Kutt.NET
             return JsonConvert.DeserializeObject<Link>(content);
         }
 
+        /// <summary>
+        /// Get Link Stats
+        /// </summary>
+        /// <param name="uuid">UUID</param>
         public async Task<LinkStats> GetLinkStatsAsync(string uuid)
         {
             var request = new RestRequest(LINK_STATS_ENDPOINT, Method.PATCH, DataFormat.Json);
@@ -74,6 +98,15 @@ namespace Kutt.NET
             return JsonConvert.DeserializeObject<LinkStats>(content);
         }
 
+        /// <summary>
+        /// Create Link
+        /// </summary>
+        /// <param name="longUrl">LongURL</param>
+        /// <param name="domain">Domain</param>
+        /// <param name="description">The Description</param>
+        /// <param name="slug">Slug</param>
+        /// <param name="reuse">Reuse</param>
+        /// <param name="password">Password</param>
         public async Task<Link> CreateLinkAsync(
             string longUrl,
             string domain = "",
