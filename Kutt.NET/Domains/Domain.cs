@@ -9,37 +9,37 @@ namespace Kutt.NET.Domains
     public class Domain
     {
         /// <summary>
-        /// Domain Address
+        /// Domain address
         /// </summary>
         [JsonProperty("address")]
         public string Address { get; private set; }
         
         /// <summary>
-        /// Domain Banned
+        /// Domain status
         /// </summary>
         [JsonProperty("banned")]
         public bool IsBanned { get; private set; }
         
         /// <summary>
-        /// ID
+        /// Domain unique ID
         /// </summary>
         [JsonProperty("id")]
         public string Uuid { get; private set; }
         
         /// <summary>
-        /// Created At
+        /// Creation date
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime CreatedAt { get; private set; }
         
         /// <summary>
-        /// Link Homepage
+        /// Domain homepage
         /// </summary>
         [JsonProperty("homepage")]
         public string Homepage { get; private set; }
         
         /// <summary>
-        /// Updated At
+        /// Update date
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime UpdatedAt { get; private set; }
