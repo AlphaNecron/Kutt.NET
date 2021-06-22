@@ -10,7 +10,7 @@ using static Kutt.NET.Constants;
 namespace Kutt.NET
 {
     /// <summary>
-    /// Link EndPoints Class
+    /// Link Endpoint Class
     /// </summary>
     public partial class KuttApi
     {
@@ -20,6 +20,7 @@ namespace Kutt.NET
         /// <param name="limit">The Limit Amount</param>
         /// <param name="skip">The Skip Amount</param>
         /// <param name="all">Total Amount</param>
+        /// <returns><see cref="ListOfLinks"/></returns>
         public async Task<ListOfLinks> GetListOfLinksAsync(
             int limit = 10,
             int skip = 0,
@@ -52,12 +53,13 @@ namespace Kutt.NET
         }
 
         /// <summary>
-        /// Update Link
+        /// Update a link
         /// </summary>
         /// <param name="uuid">UUID</param>
         /// <param name="target">Target</param>
         /// <param name="slug">Slug</param>
         /// <param name="description">The Description</param>
+        /// <returns>Updated link as <see cref="Link"/></returns>
         public async Task<Link> UpdateLinkAsync(
             string uuid,
             string target,
@@ -83,9 +85,10 @@ namespace Kutt.NET
         }
 
         /// <summary>
-        /// Get Link Stats
+        /// Get link stats
         /// </summary>
-        /// <param name="uuid">UUID</param>
+        /// <param name="uuid">Link unique ID</param>
+        /// <returns><see cref="LinkStats"/></returns>
         public async Task<LinkStats> GetLinkStatsAsync(string uuid)
         {
             var request = new RestRequest(LINK_STATS_ENDPOINT, Method.PATCH, DataFormat.Json);
@@ -101,12 +104,13 @@ namespace Kutt.NET
         /// <summary>
         /// Create Link
         /// </summary>
-        /// <param name="longUrl">LongURL</param>
+        /// <param name="longUrl">Long URL</param>
         /// <param name="domain">Domain</param>
-        /// <param name="description">The Description</param>
+        /// <param name="description">Description</param>
         /// <param name="slug">Slug</param>
         /// <param name="reuse">Reuse</param>
         /// <param name="password">Password</param>
+        /// <returns>Shortened link as <see cref="Link"/></returns>
         public async Task<Link> CreateLinkAsync(
             string longUrl,
             string domain = "",
