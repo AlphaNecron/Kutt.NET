@@ -3,6 +3,9 @@ using Newtonsoft.Json;
 
 namespace Kutt.NET.Domains
 {
+    /// <summary>
+    /// The Domain Json Properties for KuttAPI
+    /// </summary>
     public class Domain
     {
         [JsonProperty("address")]
