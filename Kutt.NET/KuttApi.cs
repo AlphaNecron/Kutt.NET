@@ -9,7 +9,7 @@ namespace Kutt.NET
         private readonly RestClient Client;
 
         /// <summary>
-        /// The owner API Key to be used
+        /// User's private API key
         /// </summary>
         public KuttApi(string apiKey)
         {
