@@ -8,6 +8,9 @@ namespace Kutt.NET
     {
         private readonly RestClient Client;
 
+        /// <summary>
+        /// User's private API key
+        /// </summary>
         public KuttApi(string apiKey)
         {
             ApiKey = apiKey ?? throw new ArgumentNullException(nameof(apiKey));
