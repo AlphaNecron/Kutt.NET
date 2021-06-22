@@ -14,7 +14,7 @@ namespace Kutt.NET.Links.LinkStats
         public Stats Stats { get; private set; }
         
         /// <summary>
-        /// Viewers
+        /// View count
         /// </summary>
         [JsonProperty("views")]
         public int[] Views { get; private set; }
