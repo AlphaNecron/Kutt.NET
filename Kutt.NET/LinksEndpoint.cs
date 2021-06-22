@@ -9,8 +9,18 @@ using static Kutt.NET.Constants;
 
 namespace Kutt.NET
 {
+    /// <summary>
+    /// Link Endpoint Class
+    /// </summary>
     public partial class KuttApi
     {
+        /// <summary>
+        /// Get list of Link
+        /// </summary>
+        /// <param name="limit">The Limit Amount</param>
+        /// <param name="skip">The Skip Amount</param>
+        /// <param name="all">Total Amount</param>
+        /// <returns><see cref="ListOfLinks"/></returns>
         public async Task<ListOfLinks> GetListOfLinksAsync(
             int limit = 10,
             int skip = 0,
@@ -28,6 +38,10 @@ namespace Kutt.NET
             return JsonConvert.DeserializeObject<ListOfLinks>(content);
         }
 
+        /// <summary>
+        /// Delete Link
+        /// </summary>
+        /// <param name="uuid">UUID</param>
         public async Task DeleteLinkAsync(string uuid)
         {
             var request = new RestRequest(LINKS_ENDPOINT_WITH_ID, Method.DELETE, DataFormat.Json);
@@ -38,6 +52,14 @@ namespace Kutt.NET
                     ($"{(int) response.StatusCode}: {(JObject.Parse(response.Content)["error"] ?? "").Value<string>()}");
         }
 
+        /// <summary>
+        /// Update a link
+        /// </summary>
+        /// <param name="uuid">UUID</param>
+        /// <param name="target">Target</param>
+        /// <param name="slug">Slug</param>
+        /// <param name="description">The Description</param>
+        /// <returns>Updated link as <see cref="Link"/></returns>
         public async Task<Link> UpdateLinkAsync(
             string uuid,
             string target,
@@ -62,6 +84,11 @@ namespace Kutt.NET
             return JsonConvert.DeserializeObject<Link>(content);
         }
 
+        /// <summary>
+        /// Get link stats
+        /// </summary>
+        /// <param name="uuid">Link unique ID</param>
+        /// <returns><see cref="LinkStats"/></returns>
         public async Task<LinkStats> GetLinkStatsAsync(string uuid)
         {
             var request = new RestRequest(LINK_STATS_ENDPOINT, Method.PATCH, DataFormat.Json);
@@ -74,6 +101,16 @@ namespace Kutt.NET
             return JsonConvert.DeserializeObject<LinkStats>(content);
         }
 
+        /// <summary>
+        /// Create Link
+        /// </summary>
+        /// <param name="longUrl">Long URL</param>
+        /// <param name="domain">Domain</param>
+        /// <param name="description">Description</param>
+        /// <param name="slug">Slug</param>
+        /// <param name="reuse">Reuse</param>
+        /// <param name="password">Password</param>
+        /// <returns>Shortened link as <see cref="Link"/></returns>
         public async Task<Link> CreateLinkAsync(
             string longUrl,
             string domain = "",

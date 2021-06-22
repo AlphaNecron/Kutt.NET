@@ -7,8 +7,15 @@ using static Kutt.NET.Constants;
 
 namespace Kutt.NET
 {
+    /// <summary>
+    /// Users Endpoint Class
+    /// </summary>
     public partial class KuttApi
     {
+        /// <summary>
+        /// Get user info
+        /// </summary>
+        /// <returns>User info</returns>
         public async Task<UserInfo> GetUserInfoAsync()
         {
             var request = new RestRequest(USERS_ENDPOINT, DataFormat.Json);

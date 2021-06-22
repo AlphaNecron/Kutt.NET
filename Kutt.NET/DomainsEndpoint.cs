@@ -11,6 +11,12 @@ namespace Kutt.NET
 {
     public partial class KuttApi
     {
+        /// <summary>
+        /// Add a new domain to your account
+        /// </summary>
+        /// <param name="address">Domain address</param>
+        /// <param name="homepage">Domain homepage</param>
+        /// <returns>Created domain</returns>
         public async Task<Domain> CreateDomainAsync(string address, string homepage = "")
         {
             var body = new
@@ -27,6 +33,11 @@ namespace Kutt.NET
                     ($"{(int) response.StatusCode}: {(JObject.Parse(content)["error"] ?? "").Value<string>()}");
             return JsonConvert.DeserializeObject<Domain>(content);
         }
+
+        /// <summary>
+        /// Remove a domain from your account
+        /// </summary>
+        /// <param name="uuid">Domain unique ID</param>
         public async Task DeleteDomainAsync(string uuid)
         {
             var request = new RestRequest(DOMAINS_ENDPOINT_WITH_ID, Method.DELETE, DataFormat.Json);
