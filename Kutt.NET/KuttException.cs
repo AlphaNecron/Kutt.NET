@@ -7,10 +7,6 @@ namespace Kutt.NET
     /// </summary>
     public class KuttException : Exception
     {
-        /// <summary>
-        /// Get Kutt Exception
-        /// </summary>
-        /// <param name="message">Error message</param>
         public KuttException(string message) : base(message)
         {
         }
