@@ -1,11 +1,11 @@
-name: publish to nuget
+name: Publish NuGet package
 on:
   push:
     branches:
       - master
 jobs:
   publish:
-    name: build, pack & publish
+    name: Build, pack and publish
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
