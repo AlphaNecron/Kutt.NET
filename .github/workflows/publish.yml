@@ -13,6 +13,6 @@ jobs:
         id: publish_nuget
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
-          PROJECT_FILE_PATH: Kutt.NET/Kutt.NET
+          PROJECT_FILE_PATH: Kutt.NET/Kutt.NET.csproj
           TAG_FORMAT: v*
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
