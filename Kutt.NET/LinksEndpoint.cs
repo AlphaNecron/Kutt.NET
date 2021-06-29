@@ -32,7 +32,7 @@ namespace Kutt.NET
             request.AddQueryParameter("limit", limit.ToString());
             request.AddQueryParameter("skip", skip.ToString());
             request.AddQueryParameter("all", all.ToString().ToLower());
-            var response = await Client.ExecuteGetAsync(request);
+            var response = await _client.ExecuteGetAsync(request);
             var content = response.Content;
             if (!response.IsSuccessful)
                 throw new KuttException
@@ -48,7 +48,7 @@ namespace Kutt.NET
         {
             var request = new RestRequest(LINKS_ENDPOINT_WITH_ID, Method.DELETE, DataFormat.Json);
             request.AddUrlSegment("id", uuid ?? throw new ArgumentNullException(nameof(uuid)));
-            var response = await Client.ExecuteAsync(request);
+            var response = await _client.ExecuteAsync(request);
             if (!response.IsSuccessful)
                 throw new KuttException
                     ($"{(int) response.StatusCode}: {(JObject.Parse(response.Content)["error"] ?? "").Value<string>()}");
@@ -60,25 +60,26 @@ namespace Kutt.NET
         /// <param name="uuid">UUID</param>
         /// <param name="target">Target</param>
         /// <param name="slug">Slug</param>
+        /// <param name="expireIn">2 minutes/hours/days</param>
         /// <param name="description">The Description</param>
         /// <returns>Updated link as <see cref="Link" /></returns>
-        public async Task<Link> UpdateLinkAsync(
-            string uuid,
+        public async Task<Link> UpdateLinkAsync(string uuid,
             string target,
             string slug,
-            string description = ""
-        )
+            string expireIn = "",
+            string description = "")
         {
             var body = new
             {
                 target = target ?? throw new ArgumentNullException(nameof(target)),
                 address = slug ?? throw new ArgumentNullException(nameof(slug)),
+                expire_in = expireIn,
                 description
             };
             var request = new RestRequest(LINKS_ENDPOINT_WITH_ID, Method.PATCH, DataFormat.Json);
             request.AddUrlSegment("id", uuid ?? throw new ArgumentNullException(nameof(uuid)));
             request.AddJsonBody(body);
-            var response = await Client.ExecuteAsync(request);
+            var response = await _client.ExecuteAsync(request);
             var content = response.Content;
             if (!response.IsSuccessful)
                 throw new KuttException
@@ -97,7 +98,7 @@ namespace Kutt.NET
         {
             var request = new RestRequest(LINK_STATS_ENDPOINT, Method.PATCH, DataFormat.Json);
             request.AddUrlSegment("id", uuid ?? throw new ArgumentNullException(nameof(uuid)));
-            var response = await Client.ExecuteAsync(request);
+            var response = await _client.ExecuteAsync(request);
             var content = response.Content;
             if (!response.IsSuccessful)
                 throw new KuttException
@@ -114,11 +115,13 @@ namespace Kutt.NET
         /// <param name="slug">Slug</param>
         /// <param name="reuse">Reuse</param>
         /// <param name="password">Password</param>
+        /// <param name="expireIn">2 minutes/hours/days</param>
         /// <returns>Shortened link as <see cref="Link" /></returns>
         public async Task<Link> CreateLinkAsync(
             string longUrl,
             string domain = "",
             string description = "",
+            string expireIn = "",
             string slug = "",
             bool reuse = false,
             string password = "")
@@ -129,12 +132,13 @@ namespace Kutt.NET
                 domain,
                 customurl = slug,
                 description,
+                expire_in = expireIn,
                 password,
                 reuse
             };
             var request = new RestRequest(LINKS_ENDPOINT, DataFormat.Json);
             request.AddJsonBody(body);
-            var response = await Client.ExecutePostAsync(request);
+            var response = await _client.ExecutePostAsync(request);
             var content = response.Content;
             if (!response.IsSuccessful)
                 throw new KuttException

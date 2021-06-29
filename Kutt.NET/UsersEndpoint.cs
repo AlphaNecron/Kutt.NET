@@ -19,7 +19,7 @@ namespace Kutt.NET
         public async Task<UserInfo> GetUserInfoAsync()
         {
             var request = new RestRequest(USERS_ENDPOINT, DataFormat.Json);
-            var response = await Client.ExecuteGetAsync(request);
+            var response = await _client.ExecuteGetAsync(request);
             var content = response.Content;
             if (!response.IsSuccessful)
                 throw new KuttException

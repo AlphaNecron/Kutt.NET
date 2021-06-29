@@ -24,7 +24,7 @@ namespace Kutt.NET
             };
             var request = new RestRequest(DOMAINS_ENDPOINT, DataFormat.Json);
             request.AddJsonBody(body);
-            var response = await Client.ExecutePostAsync(request);
+            var response = await _client.ExecutePostAsync(request);
             var content = response.Content;
             if (!response.IsSuccessful)
                 throw new KuttException
@@ -40,7 +40,7 @@ namespace Kutt.NET
         {
             var request = new RestRequest(DOMAINS_ENDPOINT_WITH_ID, Method.DELETE, DataFormat.Json);
             request.AddUrlSegment("id", uuid ?? throw new ArgumentNullException(nameof(uuid)));
-            var response = await Client.ExecuteAsync(request);
+            var response = await _client.ExecuteAsync(request);
             if (!response.IsSuccessful)
                 throw new KuttException
                     ($"{(int) response.StatusCode}: {(JObject.Parse(response.Content)["error"] ?? "").Value<string>()}");
