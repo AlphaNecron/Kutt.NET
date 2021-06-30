@@ -1,6 +1,10 @@
 name: Publish NuGet package
 on:
   push:
+    paths-ignore:
+      - '.github/**'
+      - 'README.md'
+      - 'LICENSE'
     branches:
       - master
 jobs:
