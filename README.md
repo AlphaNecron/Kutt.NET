@@ -4,7 +4,7 @@
     
 # Kutt.NET
 
-An API wrapper for [Kutt](kutt.it), written in C#.
+An API wrapper for [Kutt.it](https://kutt.it), written in C#.
 
 [![GitHub](https://img.shields.io/github/downloads/AlphaNecron/Kutt.NET/total?color=%237BA1F7&logo=github&style=for-the-badge)](https://github.com/AlphaNecron/Kutt.NET/releases/latest)
 [![NuGet](https://img.shields.io/nuget/dt/Kutt.NET?color=%237BA1F7&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/Kutt.NET)
