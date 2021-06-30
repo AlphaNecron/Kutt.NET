@@ -4,11 +4,12 @@
     
 # Kutt.NET
 
-An API wrapper for [Kutt](kutt.it), written in C#.
+An API wrapper for [Kutt.it](https://kutt.it), written in C#.
 
 [![GitHub](https://img.shields.io/github/downloads/AlphaNecron/Kutt.NET/total?color=%237BA1F7&logo=github&style=for-the-badge)](https://github.com/AlphaNecron/Kutt.NET/releases/latest)
 [![NuGet](https://img.shields.io/nuget/dt/Kutt.NET?color=%237BA1F7&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/Kutt.NET)
 [![Latest](https://img.shields.io/github/v/tag/AlphaNecron/Kutt.NET?color=%237BA1F7&label=RELEASE&logo=github&sort=semver&style=for-the-badge)](https://github.com/AlphaNecron/Kutt.NET/releases/latest)
+[![Workflow status](https://img.shields.io/github/workflow/status/AlphaNecron/Kutt.NET/Publish%20NuGet%20package?color=7BA1F7&logo=github&style=for-the-badge)](https://github.com/AlphaNecron/Kutt.NET)
 [![MIT](https://img.shields.io/github/license/AlphaNecron/Kutt.NET?color=%237BA1F7&style=for-the-badge)](#)
 ## Authors
 
@@ -20,6 +21,9 @@ An API wrapper for [Kutt](kutt.it), written in C#.
 ```csharp
 // Initializes a Kutt instance with default server
 KuttApi kutt = new KuttApi("your_api_key");
+
+// Initializes a Kutt instance with your own server
+KuttApi kutt = new KuttApi("your_api_key", "https://example.com");
 
 // Creates a shortened URL
 Link link = await CreateLinkAsync("https://github.com");
