@@ -28,6 +28,13 @@ KuttApi kutt = new KuttApi("your_api_key", "https://example.com");
 // Creates a shortened URL
 Link link = await CreateLinkAsync("https://github.com");
 Console.WriteLine($"Shortened URL: {link.ShortUrl}");
+
+// With fluent interface
+Link link = await new LinkCreationRequest("your_api_key", "github.com");
+                      .WithExpiration("2m") // 2 minutes
+                      .WithCustomSlug("gh") // https://kutt.it/gh
+                      .WithPassword("github")
+                      .SubmitAsync(); // Or you can use SubmitAsync("example.com") to submit with your own server.
 ```
 
 
