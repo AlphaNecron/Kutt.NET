@@ -30,7 +30,7 @@ Link link = await CreateLinkAsync("https://github.com");
 Console.WriteLine($"Shortened URL: {link.ShortUrl}");
 
 // With fluent interface
-Link link = await new LinkCreationRequest("your_api_key", "github.com");
+Link link = await new LinkCreationRequest("your_api_key", "github.com")
                       .WithExpiration("2m") // 2 minutes
                       .WithCustomSlug("gh") // https://kutt.it/gh
                       .WithPassword("github")
