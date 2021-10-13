@@ -1,7 +1,7 @@
-
+<div align='center'>
+    
 [![Logo](https://user-images.githubusercontent.com/57827456/122667487-4923e980-d1dd-11eb-9c78-c9b25ab43149.png)](#)
 
-    
 # Kutt.NET
 
 An API wrapper for [Kutt.it](https://kutt.it), written in C#.
@@ -11,7 +11,8 @@ An API wrapper for [Kutt.it](https://kutt.it), written in C#.
 [![Latest](https://img.shields.io/github/v/tag/AlphaNecron/Kutt.NET?color=%237BA1F7&label=RELEASE&logo=github&sort=semver&style=for-the-badge)](https://github.com/AlphaNecron/Kutt.NET/releases/latest)
 [![Workflow status](https://img.shields.io/github/workflow/status/AlphaNecron/Kutt.NET/Publish%20NuGet%20package?color=7BA1F7&logo=github&style=for-the-badge)](https://github.com/AlphaNecron/Kutt.NET)
 [![MIT](https://img.shields.io/github/license/AlphaNecron/Kutt.NET?color=%237BA1F7&style=for-the-badge)](#)
-## Authors
+</div>
+## Author
 
 - [@AlphaNecron](https://www.github.com/AlphaNecron)
 
